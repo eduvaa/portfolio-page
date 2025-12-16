@@ -51,13 +51,13 @@
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(91.817% 0.00323 15.438);
+  --primary: oklch(15.577% 0.00635 285.608 / 0.849);
   --primary-foreground: oklch(0.985 0 0);
   --secondary: oklch(11.857% 0.02612 294.004);
   --secondary-foreground: oklch(0.205 0 0);
   --muted: oklch(0.97 0 0);
   --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(26.888% 0.08799 142.651);
+  --accent: oklch(47.363% 0.09176 143.985);
   --accent-foreground: oklch(0.205 0 0);
   --destructive: oklch(0.577 0.245 27.325);
   --border: oklch(0.922 0 0);
@@ -120,8 +120,11 @@
     @apply bg-background text-foreground;
   }
   /* Remove default link underlines globally (Tailwind Preflight applies underlines by default) */
-  a,
-  a:visited {
+  a {
+    @apply no-underline;
+    text-decoration: none !important;
+  }
+  a:hover {
     @apply no-underline;
     /* also set explicit properties to override any later `inherit` rules */
     text-decoration-line: none !important;

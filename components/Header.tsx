@@ -3,35 +3,30 @@ import { Button } from "./ui/button";
 
 //components
 import Nav from "./Nav";
+import MobileNav from "./MobileNav";
+
 
 export default function Header() {
   return (
-    <header className="w-full py-8 xl:py-12 15.577% 0.00635 285.608 / 0.849 dark:bg-gray-900">
-        <div className="container mx-auto flex items-center justify-between no-underline">
-                <div className="no-underline">
-                <Link href="/" className="no-underline">
-                    <h1 className="text-4xl font-bold no-underline">Eemil <span className="text-accent no-underline">.</span></h1>
-                </Link>
-                </div>
+    <header className="site-header w-full py-8 xl:py-12">
+      <div className="container mx-auto flex items-center justify-between">
+          <div>
+          <Link href="/">
+            <h1 className="text-4xl font-bold">Eemil <span className="text-accent">.</span></h1>
+          </Link>
+          </div>
 
             {/* desktop navigation */}
-                <div className="hidden xl:flex items-center gap-8 no-underline">
+                <div className="hidden xl:flex items-center gap-8">
                     <Nav />
-                    <Link href="/contact">
-                        <Button className="ml-auto">
-                            Contact Me
-                        </Button>
-                    </Link>
+                    <Button asChild className="ml-auto">
+                      <Link href="/contact">Contact Me</Link>
+                    </Button>
                 </div>
 
                 {/* mobile navigation */}
-                <div className="flex xl:hidden no-underline">
-                mobile nav
-                <Link href="/contact">
-                    <Button className="ml-auto">
-                        Contact Me
-                    </Button>
-                </Link>
+                <div className="flex xl:hidden">
+                < MobileNav />
             </div>
         </div>
     </header>
